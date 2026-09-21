@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi-Sure | scan verify, stay safe</title>
+    <link rel="stylesheet"
+    href="style.css">
+    <link rel="stylesheet"
+    href="mobile.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="assets/logo.png" alt="Medi-Sure">
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#verify">Verify Medicine</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About Us</a>
+                <a href="#safety">Safety Tips</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+    <!-- hero section -->
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">BE SAFE, BE SURE</span>
+                <h1>
+                    Check Medicine.<br>
+                    <span>Trust Only Genuine.</span>
+                </h1>
+                <p class="hero-description">
+                    Verify your medicine before you use it. Our smart verification
+                    system helps you check medicine details and identify suspicious
+                    products quickly and easily.
+                </p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Safe &amp; Secure</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="feature-icon">⚡</div>
+                        <span>Instant Results</span>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Easy to Use</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img
+                    src="assets/hero-medicine.png"
+                    alt="Medicine verification"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- scan buttons -->
+
+    <section class="verification-options" id="verify">
+        <div class="verification-container">
+            <div class="section-heading">
+                <span>VERIFY YOUR MEDICINE</span>
+                <h2>Choose How You Want to Verify</h2>
+                <p>
+                    Quickly check your medicine using a barcode or enter
+                    its details manually.
+                </p>
+            </div>
+            <div class="verification-cards">
+                <div class="verification-card scan-card">
+                    <div class="verification-icon">
+                        <span>⌁</span>
+                    </div>
+                    <div class="verification-card-content">
+                        <h3>Scan Medicine</h3>
+                        <p>
+                            Scan the QR code or barcode on your medicine
+                            package for quick verification.
+                        </p>
+                        <button class="verify-btn" id="scanBtn">
+                            Scan Medicine
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="verification-card manual-card">
+                    <div class="verification-icon">
+                        <span>✎</span>
+                    </div>
+                    <div class="verification-card-content">
+                        <h3>Enter Details Manually</h3>
+                        <p>
+                            Don't have a scanner? Enter the medicine
+                            details manually to verify it.
+                        </p>
+                        <button class="verify-btn" id="manualBtn">
+                            Enter Details
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="scanner-modal" id="scannerModal">
+        <div class="scanner-box">
+            <button class="scanner-close" id="scannerClose">
+                ×
+            </button>
+            <div class="scanner-icon">
+                ⌁
+            </div>
+            <h2>Scan Medicine</h2>
+            <p class="scanner-subtitle">
+                Place the QR code or barcode inside the frame.
+            </p>
+            <div class="scanner-view">
+                <video
+                    id="scannerVideo"
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
+                <div class="scanner-frame">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <p class="scan-status" id="scanStatus">
+                Point your camera at the medicine code
+            </p>
+            <button
+                class="scanner-manual"
+                id="scannerManual"
+            >
+                Enter GTIN Manually
+            </button>
+        </div>
+    </div>
+    
+    <!-- How it works -->
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="how-container">
+            <div class="section-heading">
+                <span>HOW IT WORKS</span>
+                <h2>
+                    Verify Your Medicine in
+                    <span>4 Simple Steps</span>
+                </h2>
+                <p>
+                    Our simple verification process helps you check
+                    your medicine quickly and confidently.
+                </p>
+            </div>
+            <div class="steps-wrapper">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <span>⌕</span>
+                    </div>
+                    <h3>Scan</h3>
+                    <p>
+                        Scan the QR code or barcode available
+                        on your medicine package.
+                    </p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <span>⌁</span>
+                    </div>
+                    <h3>Identify</h3>
+                    <p>
+                        We identify the medicine using its
+                        unique product information.
+                    </p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <span>✓</span>
+                    </div>
+                    <h3>Verify</h3>
+                    <p>
+                        Medicine details are checked against
+                        trusted information sources.
+                    </p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">
+                        <span>◉</span>
+                    </div>
+                    <h3>Result</h3>
+                    <p>
+                        Get a clear result showing whether
+                        the medicine can be verified.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about us -->
+
+    <section class="team-section" id="about">
+        <div class="team-container">
+            <div class="section-heading team-heading">
+                <span>MEET OUR TEAM</span>
+                <h2>
+                    The Team Behind
+                    <span>Medi-Sure</span>
+                </h2>
+                <p>
+                    We are a team of passionate B.Tech CSE students
+                    working together to make medicine verification
+                    simple, accessible and reliable.
+                </p>
+            </div>
+            <div class="team-cards">
+                <!-- Akash -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="assets/akash.jpg" alt="Akash Sharma">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">
+                            Frontend Developer
+                        </span>
+                        <h3>Akash Sharma</h3>
+                        <p class="team-education">
+                            B.Tech CSE · BSACET, Mathura
+                        </p>
+                        <p class="team-bio">
+                            B.Tech CSE Student | C Programming Intern @ Pinnacle Labs | Fullstack Developer | Learning python & Web Devlopment | C • Python • HTML • CSS • JavaScript • Numpy • MYSQL • Pandas
+                        </p>
+                        <div class="team-skills">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Git</span>
+                        </div>
+                        <div class="team-socials">
+                            <a href="https://github.com/akash614214-dotcom" target="_blank">
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/akash-sharma-8a5925419?" target="_blank">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ashpaq -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="assets/ashpaq.jpg" alt="Ashpaq khan">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">
+                            Backend Developer
+                        </span>
+                        <h3>Ashpaq khan</h3>
+                        <p class="team-education">
+                            B.Tech CSE · GLAU, Mathura
+                        </p>
+                        <p class="team-bio">
+                            Backend developer interested in building reliable
+                            APIs, database systems and scalable application
+                            logic.
+                        </p>
+                        <div class="team-skills">
+                            <span>Node.js</span>
+                            <span>Express.js</span>
+                            <span>REST API</span>
+                            <span>Database</span>
+                        </div>
+                        <div class="team-socials">
+                            <a href="https://github.com/ashpaqkhan068-hub" target="_blank">
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/ashpaq-khan-52aa5342b?" target="_blank">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- aditya -->
+                    <div class="team-card">
+                    <div class="team-image">
+                        <img src="assets/aditya.jpg" alt="Aditya">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">
+                            UI/UX Designer
+                        </span>
+                        <h3>Aditya</h3>
+                        <p class="team-education">
+                            B.Tech CSE · BSACET, Mathura
+                        </p>
+                        <p class="team-bio">
+                            UI/UX designer passionate about creating clean,
+                            intuitive and accessible digital experiences.
+                        </p>
+                        <div class="team-skills">
+                            <span>Figma</span>
+                            <span>Wireframing</span>
+                            <span>Prototyping</span>
+                            <span>UI Design</span>
+                        </div>
+                        <div class="team-socials">
+                            <a href="https://github.com/adityathakurdev" target="_blank">
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/aditya-thakur-b85aa73b6?" target="_blank">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- safety tips -->
+
+    <section class="safety-section" id="safety">
+        <div class="safety-container">
+            <div class="section-heading safety-heading">
+                <span>STAY SAFE</span>
+                <h2>
+                    Smart Habits for
+                    <span>Safer Medicines</span>
+                </h2>
+                <p>
+                    A few simple checks can help you stay informed
+                    and avoid suspicious or unsafe medicines.
+                </p>
+            </div>
+            <div class="safety-content">
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        ✓
+                    </div>
+                    <div>
+                        <h3>Check Before You Use</h3>
+                        <p>
+                            Always verify important medicine details
+                            before taking a medicine.
+                        </p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        ◉
+                    </div>
+                    <div>
+                        <h3>Check Packaging</h3>
+                        <p>
+                            Look for damaged packaging, unusual printing
+                            or missing information.
+                        </p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        !
+                    </div>
+                    <div>
+                        <h3>Check Expiry Date</h3>
+                        <p>
+                            Never use a medicine after its expiry date
+                            unless advised by a qualified professional.
+                        </p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        +
+                    </div>
+                    <div>
+                        <h3>Buy From Trusted Sources</h3>
+                        <p>
+                            Purchase medicines from licensed pharmacies
+                            and trusted healthcare providers.
+                        </p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        ⌕
+                    </div>
+                    <div>
+                        <h3>Verify Suspicious Medicines</h3>
+                        <p>
+                            If something looks unusual, verify the medicine
+                            before using it.
+                        </p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        ♡
+                    </div>
+                    <div>
+                        <h3>Ask a Professional</h3>
+                        <p>
+                            When in doubt, consult a doctor or qualified
+                            pharmacist before taking the medicine.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="safety-note">
+                <div class="safety-note-icon">!</div>
+                <div>
+                    <h3>Important</h3>
+                    <p>
+                        Medi-Sure is designed to provide medicine
+                        information and verification assistance. It does
+                        not replace professional medical advice.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact us -->
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="section-heading contact-heading">
+                <span>GET IN TOUCH</span>
+                <h2>
+                    Contact <span>Us</span>
+                </h2>
+                <p>
+                    Have a question, suggestion or feedback?
+                    We'd love to hear from you.
+                </p>
+            </div>
+            <div class="contact-content">
+                <!-- LEFT SIDE -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:akash614214@gmail.com">
+                                akash614214@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <a href="tel:+918449602030">
+                                +91 84496 02030
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            📍
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>
+                                Mathura, Uttar Pradesh
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a
+                            href="https://github.com/akash614214-dotcom"
+                            target="_blank"
+                            aria-label="Github"
+                        >
+                            Git
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/akash-sharma-8a5925419?"
+                            target="_blank"
+                            aria-label="LinkedIn"
+                        >
+                            in
+                        </a>
+                        <a
+                            href="https://www.instagram.com/"
+                            target="_blank"
+                            aria-label="Instagram"
+                        >
+                            ◎
+                        </a>
+                        <a
+                            href="tel:+918449602030"
+                            aria-label="Phone"
+                        >
+                            ☎
+                        </a>
+                    </div>
+                </div>
+                <!-- RIGHT SIDE -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="contact-input-group">
+                            <input
+                                type="text"
+                                id="contactName"
+                                placeholder="Your Name"
+                                required
+                            >
+                        </div>
+                        <div class="contact-input-group">
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                placeholder="Email Address"
+                                required
+                            >
+                        </div>
+                        <div class="contact-input-group">
+                            <input
+                                type="text"
+                                id="contactSubject"
+                                placeholder="Subject"
+                                required
+                            >
+                        </div>
+                        <div class="contact-input-group">
+                            <textarea
+                                id="contactMessage"
+                                placeholder="Your Message"
+                                required
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="contact-submit"
+                        >
+                            Send Message
+                            <span>→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>
+                    MEDI<span>-SURE</span>
+                </h2>
+                <p>
+                    Medi-Sure is a medicine verification platform that helps users check whether a medicine is genuine or suspicious. Users can scan a QR/barcode or enter medicine details manually to get quick verification and stay safe from counterfeit medicines.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://github.com/akash614214-dotcom" target="_blank">
+                        Git
+                    </a>
+                    <a href="https://www.linkedin.com/in/akash-sharma-8a5925419?" target="_blank">
+                        in
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        ◎
+                    </a>
+                    <a href="tel:+918449602030">
+                        ☎
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#verify">Verify Medicine</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About Us</a>
+                <a href="#safety">Safety Tips</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <a href="mailto:akash614214@gmail.com">
+                    <span>✉</span>
+                    akash614214@gmail.com
+                </a>
+                <a href="tel:+918449602030">
+                    <span>☎</span>
+                    +91 84496 02030
+                </a>
+                <p>
+                    <span>📍</span>
+                    Mathura, Uttar Pradesh
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                © 2026 Medi-Sure • Designed &amp; Developed with ❤️
+            </p>
+        </div>
+    </footer>
+
+    <div class="verify-modal" id="verifyModal">
+        <div class="verify-box">
+            <button class="verify-close" id="verifyClose">
+                ×
+            </button>
+            <div class="verify-icon-box">
+                ✓
+            </div>
+            <h2>Verify Your Medicine</h2>
+            <p class="verify-subtitle">
+                Enter the GTIN printed on your medicine package.
+            </p>
+            <div class="verify-input-box">
+                <input
+                    type="text"
+                    id="gtinInput"
+                    placeholder="Enter GTIN"
+                >
+            </div>
+            <button class="verify-submit" id="verifySubmit">
+                Verify Medicine
+                <span>→</span>
+            </button>
+            <div id="verifyResult"></div>
+        </div>
+    </div>
+    <div class="verify-result-modal" id="verifyResultModal">
+        <div class="result-card">
+            <div class="result-top">
+                <div class="result-check">
+                    ✓
+                </div>
+                <span class="result-badge">
+                    VERIFIED
+                </span>
+            </div>
+            <h2>Medicine Verified</h2>
+            <p class="result-message">
+                This medicine was found in the Medi-Sure database.
+            </p>
+            <div class="medicine-details">
+                <div class="detail-item full">
+                    <span>Medicine</span>
+                    <strong id="resultMedicine"></strong>
+                </div>
+                <div class="detail-item">
+                    <span>Manufacturer</span>
+                    <strong id="resultManufacturer"></strong>
+                </div>
+                <div class="detail-item">
+                    <span>Strength</span>
+                    <strong id="resultStrength"></strong>
+                </div>
+                <div class="detail-item full">
+                    <span>GTIN</span>
+                    <strong id="resultGTIN"></strong>
+                </div>
+                 <div class="detail-item full">
+                    <span>Dosage Form</span>
+                    <strong id="resultDos"></strong>
+                </div>
+            </div>
+            <div class="verified-footer">
+                <span>✓</span>
+                Verified by Medi-Sure
+            </div>
+            <button class="result-close" id="resultClose">
+                Done
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi Sure - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">
+                <span>✓</span>
+            </div>
+            <div class="brand-name">
+                <span>Medi</span><strong>Sure</strong>
+            </div>
+            <div class="divider"></div>
+            <h2>Admin Panel</h2>
+        </div>
+        <div class="admin-user">
+            <div class="user-icon">◯</div>
+            <span>Admin</span>
+        </div>
+    </header>
+    <main class="container">
+        <section class="heading">
+            <h1>Add New Medicine</h1>
+            <p>Choose an option to add medicine to Medi Sure database.</p>
+        </section>
+        <section class="options">
+            <button class="option-card manual-card" onclick="openManual()">
+                <div class="option-icon">📝</div>
+                <div class="option-content">
+                    <h2>1. Manually Add</h2>
+                    <p>Enter medicine details manually.</p>
+                </div>
+                <div class="arrow">›</div>
+            </button>
+            <button class="option-card scan-card" onclick="openScanner()">
+                <div class="option-icon scan-icon">▥</div>
+                <div class="option-content">
+                    <h2>2. Scan & Fill</h2>
+                    <p>Scan barcode / QR code to auto-fill details.</p>
+                </div>
+                <div class="arrow">›</div>
+            </button>
+        </section>
+        <section class="bottom-section">
+            <div class="recent-box">
+                <div class="box-title">
+                    <span class="list-icon">☷</span>
+                    <h2>Recent Added Medicines</h2>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Medicine Name</th>
+                                <th>Manufacturer</th>
+                                <th>Strength</th>
+                                <th>Added On</th>
+                            </tr>
+                        </thead>
+                        <tbody id="medicineList"></tbody>
+                    </table>
+                </div>
+                <button class="view-all" onclick="showAllMedicines()">
+                    View All Medicines
+                </button>
+            </div>
+            <div class="total-box">
+                <div class="medicine-icon">
+                    💊
+                </div>
+                <h2>Total Medicines</h2>
+                <div class="total-number" id="totalMedicines">
+                    0
+                </div>
+                <p>Total medicines in database</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        © 2026 Medi Sure. All rights reserved.
+    </footer>
+    <div class="modal" id="medicineModal">
+        <div class="modal-box">
+            <button class="close" onclick="closeModal()">×</button>
+            <div class="modal-title">
+                <div class="modal-icon">💊</div>
+                <div>
+                    <h2>Add Medicine</h2>
+                    <p>Enter medicine details</p>
+                </div>
+            </div>
+            <form id="medicineForm">
+                <label>
+                    Medicine Name
+                    <input
+                        type="text"
+                        id="medicineName"
+                        placeholder="e.g. Paracetamol"
+                        required
+                    >
+                </label>
+                <label>
+                    Manufacturer
+                    <input
+                        type="text"
+                        id="manufacturer"
+                        placeholder="e.g. Sun Pharma"
+                        required
+                    >
+                </label>
+                <label>
+                    Strength
+                    <input
+                        type="text"
+                        id="strength"
+                        placeholder="e.g. 500 mg"
+                        required
+                    >
+                </label>
+                <label>
+                    GTIN / Barcode
+                    <input
+                        type="text"
+                        id="gtin"
+                        placeholder="Enter GTIN or barcode"
+                        required
+                    >
+                </label>
+                <label>
+                    Dosage Form
+                    <span class="optional">(Optional)</span>
+                    <select class="select-otn" id="dosageForm" >
+                    <option value="">Select dosage form</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Capsule">Capsule</option>
+                    <option value="Syrup">Syrup</option>
+                    <option value="Injection">Injection</option>
+                    <option value="Cream">Cream</option>
+                    <option value="Powder">Powder</option>
+                    <option value="Other">Other</option>
+                </select>
+                </label>
+
+                <label>
+                    Batch Number
+                    <span class="optional">(Optional)</span>
+                    <input
+                        type="text"
+                        id="batchNumber"
+                        placeholder="Enter batch number"
+                    >
+                </label>
+                <button type="submit" class="add-btn">
+                    + Add Medicine
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="scannerModal">
+        <div class="modal-box scanner-box">
+            <button class="close" onclick="closeScanner()">×</button>
+            <div class="modal-title">
+                <div class="modal-icon scan-modal-icon">▥</div>
+                <div>
+                    <h2>Scan Medicine</h2>
+                    <p>Scan barcode or QR code</p>
+                </div>
+            </div>
+            <div class="scanner-area">
+                <video id="scannerVideo" autoplay playsinline></video>
+                <div class="scan-frame"></div>
+                <p id="scanStatus">
+                    Point your camera at the barcode or QR code
+                </p>
+            </div>
+            <button class="camera-btn" onclick="startScanner()">
+                Start Camera
+            </button>
+            <button class="manual-fallback" onclick="openManualFromScanner()">
+                Enter manually instead
+            </button>
+        </div>
+    </div>
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <div>
+            <strong>Medicine added successfully!</strong>
+            <p>The medicine has been added to the database.</p>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
